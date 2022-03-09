@@ -65,40 +65,40 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - Assets/Images/comment_p.png
-      - Assets/Images/contact_b.png
-      - Assets/Images/contact_w.png
-      - Assets/Images/logo_transparent_w.png
-      - Assets/Images/cops-logo.png
-      - Assets/Images/home_lightP.png
-      - Assets/Images/home_w.png
-      - Assets/Images/karen_logo.png
-      - Assets/Images/like_P.png
-      - Assets/Images/live1.png
-      - Assets/Images/live1_lightP.png
-      - Assets/Images/location_b.png
-      - Assets/Images/location_w.png
-      - Assets/Images/logo_transparent.png
-      - Assets/Images/maxresdefault.jpg
-      - Assets/Images/other_logo.png
-      - Assets/Images/plus.png
-      - Assets/Images/plus_p.png
-      - Assets/Images/pray.png
-      - Assets/Images/search_g.png
-      - Assets/Images/send-message.png
-      - Assets/Images/settings_w.png
-      - Assets/Images/settings_w1.png
-      - Assets/Images/share (1).png
-      - Assets/Images/share.png
-      - Assets/Images/share_P.png
-      - Assets/Images/shield.png
-      - Assets/Images/uploud.png
-      - Assets/Images/user_b.png
-      - Assets/Images/user_lightP.png
-      - Assets/Images/user_w.png
-      - Assets/Images/user1_w.png
-      - Assets/Images/video_w.png
-      - Assets/Images/view_b.png
-      - Assets/Images/warning.png
+    - Assets/Images/contact_b.png
+    - Assets/Images/contact_w.png
+    - Assets/Images/logo_transparent_w.png
+    - Assets/Images/cops-logo.png
+    - Assets/Images/home_lightP.png
+    - Assets/Images/home_w.png
+    - Assets/Images/karen_logo.png
+    - Assets/Images/like_P.png
+    - Assets/Images/live1.png
+    - Assets/Images/live1_lightP.png
+    - Assets/Images/location_b.png
+    - Assets/Images/location_w.png
+    - Assets/Images/logo_transparent.png
+    - Assets/Images/maxresdefault.jpg
+    - Assets/Images/other_logo.png
+    - Assets/Images/plus.png
+    - Assets/Images/plus_p.png
+    - Assets/Images/pray.png
+    - Assets/Images/search_g.png
+    - Assets/Images/send-message.png
+    - Assets/Images/settings_w.png
+    - Assets/Images/settings_w1.png
+    - Assets/Images/share (1).png
+    - Assets/Images/share.png
+    - Assets/Images/share_P.png
+    - Assets/Images/shield.png
+    - Assets/Images/uploud.png
+    - Assets/Images/user_b.png
+    - Assets/Images/user_lightP.png
+    - Assets/Images/user_w.png
+    - Assets/Images/user1_w.png
+    - Assets/Images/video_w.png
+    - Assets/Images/view_b.png
+    - Assets/Images/warning.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
