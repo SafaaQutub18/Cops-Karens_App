@@ -17,7 +17,7 @@ class PersonalSineUp extends StatelessWidget {
       backgroundColor: const Color(0xffffffff),
       body: Stack(
         children: <Widget>[
-          Transform.rotate(
+          /*Transform.rotate( // this part give me error for screen
             angle: 0.5411,
             child: Container(
               decoration: BoxDecoration(
@@ -30,8 +30,8 @@ class PersonalSineUp extends StatelessWidget {
               ),
               margin: EdgeInsets.fromLTRB(102.3, 334.8, -427.3, -222.8),
             ),
-          ),
-          Pinned.fromPins(
+          ),*/
+          Pinned.fromPins( // top Blue box
             Pin(start: 0.0, end: 0.0),
             Pin(size: 230.0, start: 0.0),
             child: Container(
@@ -45,7 +45,7 @@ class PersonalSineUp extends StatelessWidget {
               ),
             ),
           ),
-          Pinned.fromPins(
+          Pinned.fromPins( //
             Pin(size: 134.0, middle: 0.5021),
             Pin(size: 134.0, start: 41.0),
             child: Stack(
