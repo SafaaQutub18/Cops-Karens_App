@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'BottomNavBar.dart';
 import 'HomePage1.dart';
 import 'package:adobe_xd/page_link.dart';
+
+import 'SideBar.dart';
 
 class Live extends StatelessWidget {
   Live({
@@ -11,6 +14,9 @@ class Live extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //bottomNavigationBar: buildBottomNavBar(this.context,1),
+      drawer: SideBar(),
+
       backgroundColor: const Color(0xffffffff),
       body: Stack(
         children: <Widget>[

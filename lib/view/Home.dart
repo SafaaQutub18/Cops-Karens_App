@@ -1,4 +1,4 @@
-import 'package:copskarens_app/view/BottomNavBar.dart';
+
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -6,6 +6,7 @@ import 'HomePage1.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'Component11.dart';
 import 'SideBar.dart';
+import 'package:copskarens_app/view/BottomNavBar.dart';
 
 class Home extends StatefulWidget {
   Home({
@@ -24,6 +25,7 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
+      bottomNavigationBar: buildBottomNavBar(this.context,1),
       drawer: SideBar(),
       body: Stack(
         children: <Widget>[
@@ -108,12 +110,12 @@ class HomeState extends State<Home> {
           Pinned.fromPins(
             Pin(size: 24.0, middle: 0.5014),
             Pin(size: 13.0, start: 98.0),
-            child: Text(
+            child: const Text(
               'Live',
               style: TextStyle(
                 fontFamily: 'Bahnschrift',
                 fontSize: 13,
-                color: const Color(0xffffffff),
+                color: Color(0xffffffff),
                 fontWeight: FontWeight.w700,
                 height: 2.3076923076923075,
               ),
@@ -128,12 +130,12 @@ class HomeState extends State<Home> {
           Pinned.fromPins(
             Pin(size: 56.0, start: 42.0),
             Pin(size: 13.0, start: 98.0),
-            child: Text(
+            child: const Text(
               'Following',
               style: TextStyle(
                 fontFamily: 'Bahnschrift',
                 fontSize: 13,
-                color: const Color(0xffc64a62),
+                color: Color(0xffc64a62),
                 fontWeight: FontWeight.w700,
                 height: 2.3076923076923075,
               ),
@@ -148,12 +150,12 @@ class HomeState extends State<Home> {
           Pinned.fromPins(
             Pin(size: 50.0, end: 44.0),
             Pin(size: 13.0, start: 98.0),
-            child: Text(
+            child: const Text(
               'Trending',
               style: TextStyle(
                 fontFamily: 'Bahnschrift',
                 fontSize: 13,
-                color: const Color(0xffc64a62),
+                color: Color(0xffc64a62),
                 fontWeight: FontWeight.w700,
                 height: 2.3076923076923075,
               ),
@@ -214,7 +216,7 @@ class HomeState extends State<Home> {
             ),
           ),
 
-
+// add circle:
           Pinned.fromPins(
             Pin(start: 21.0, end: 20.0),
             Pin(size: 538.0, end: 33.0),
@@ -505,12 +507,12 @@ class HomeState extends State<Home> {
                         Pinned.fromPins(
                           Pin(size: 9.0, start: 23.0),
                           Pin(size: 8.0, end: 13.0),
-                          child: Text(
+                          child: const Text(
                             '5k',
                             style: TextStyle(
                               fontFamily: 'Bahnschrift',
                               fontSize: 8,
-                              color: const Color(0xff707070),
+                              color: Color(0xff707070),
                               height: 1.625,
                             ),
                             textHeightBehavior: TextHeightBehavior(
@@ -883,11 +885,13 @@ class HomeState extends State<Home> {
               ],
             ),
           ),
-          Pinned.fromPins(
-            Pin(start: 9.0, end: 8.0),
-            Pin(size: 49.0, end: 12.0),
-            child: BottomNavBar()
-          ),
+
+          // app bottom nav bar
+          // Pinned.fromPins(
+          //   Pin(start: 9.0, end: 8.0),
+          //   Pin(size: 49.0, end: 12.0),
+          //   child: BottomNavBar()
+          // ),
         ],
       ),
     );
