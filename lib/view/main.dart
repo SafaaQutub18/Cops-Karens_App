@@ -1,4 +1,5 @@
 import 'package:copskarens_app/view/Home.dart';
+import 'package:copskarens_app/view/UserProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 

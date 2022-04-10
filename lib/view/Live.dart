@@ -14,9 +14,7 @@ class Live extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //bottomNavigationBar: buildBottomNavBar(this.context,1),
       drawer: SideBar(),
-
       backgroundColor: const Color(0xffffffff),
       body: Stack(
         children: <Widget>[

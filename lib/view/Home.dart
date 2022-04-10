@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,6 +17,7 @@ class Home extends StatefulWidget {
     return HomeState();
   }
 }
+
 class HomeState extends State<Home> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -25,15 +25,117 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      bottomNavigationBar: buildBottomNavBar(this.context,1),
+      bottomNavigationBar: buildBottomNavBar(this.context, 1),
       drawer: SideBar(),
       body: Stack(
-        children: <Widget>[
-          SizedBox(   height: 300,),
-          // sideBar icon (menu)
-          IconButton(icon: Icon(Icons.menu, color: Color(0xff1A73E8 ),size:40.0,),
-            onPressed: () => _scaffoldKey.currentState!.openDrawer(),),
+        children: [
+          // SizedBox(child: Container(
+          //   width: double.infinity,
+          //   height: 600,color: Colors.greenAccent,
+          // ), ), //???????????????
+          Row(children: [
+            IconButton(
+              icon: Icon(
+                Icons.menu,
+                color: Color(0xff125FB2),
+                size: 40.0,
+              ),
+              onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Container(
+              width: 300,
+              height: 42,
+              // margin: const EdgeInsets.all(15),
 
+              child: TextField(
+                decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    filled: true,
+                    hintStyle: TextStyle(color: Colors.grey[400]),
+                    hintText: "search",
+                    fillColor: Color(0xffF0F7FA)),
+              ),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Container(
+              width: 60,
+              height: 60,
+              child: IconButton(
+                icon: Image.asset(
+                  'Assets/Images/logo_blue.png',
+                  fit: BoxFit.cover,
+                ),
+                onPressed: () {},
+              ),
+            ) // right logo:
+          ]),
+
+          // 3 round rectangle:
+          Container(
+              margin: const EdgeInsets.only(top: 80, right: 20, left: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      width: 120,
+                      height: 30,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(30.0),
+                            ),
+                            primary: Colors.white,
+                            //button's fill color
+                            onPrimary: Color(0xffC64A62 ),
+                            shadowColor: Colors.black,
+                            elevation: 5.0, //buttons Material shadow
+                          ),
+                          child: Text("Following"))),
+                  SizedBox(width: 15,),
+                  Container(
+                      width: 120,
+                      height: 30,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(30.0),
+                            ),
+                            primary: Color(0xff125FB2),
+                            //button's fill color
+                            onPrimary: Colors.white,
+                            shadowColor: Colors.black,
+                            elevation: 5.0, //buttons Material shadow
+                          ),
+                          child: Text("Trending"))),
+                  SizedBox(width: 15,),
+                  Container(
+                      width: 120,
+                      height: 30,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(30.0),
+                            ),
+                            primary: Colors.white,
+                            //button's fill color
+                            onPrimary: Color(0xffC64A62 ), //text color
+                            shadowColor: Colors.black,
+                            elevation: 5.0, //buttons Material shadow
+                          ),
+                          child: Text("Live")))
+                ],
+              )),
           // transparent background
           Pinned.fromPins(
             Pin(size: 709.0, end: -423.0),
@@ -50,176 +152,65 @@ class HomeState extends State<Home> {
             ),
           ),
 
-          // search editText
-          Pinned.fromPins(
-            Pin(size: 256.0, middle: 0.4874),
-            Pin(size: 36.0, start: 23.0),
-            child: SvgPicture.string(
-              _svg_y0a2vt,
-              allowDrawingOutsideViewBox: true,
-              fit: BoxFit.fill,
-            ),
-          ),
-
-// right logo:
-          Pinned.fromPins(
-            Pin(size: 43.0, end: 12.0),
-            Pin(size: 43.0, start: 20.0),
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: const AssetImage('Assets/Images/logo_blue.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-
-
-          Pinned.fromPins(
-            Pin(size: 18.7, middle: 0.8007),
-            Pin(size: 18.7, start: 32.0),
-            child: SvgPicture.string(
-              _svg_ahhzy,
-              allowDrawingOutsideViewBox: true,
-              fit: BoxFit.fill,
-            ),
-          ),
-          Pinned.fromPins(
-            Pin(size: 100.0, start: 20.0),
-            Pin(size: 24.0, start: 92.0),
-            child: Component11(),
-          ),
-          Pinned.fromPins(
-            Pin(size: 100.0, middle: 0.5018),
-            Pin(size: 24.0, start: 92.0),
-            child: Component11(),
-          ),
-          Pinned.fromPins(
-            Pin(size: 100.0, end: 19.0),
-            Pin(size: 24.0, start: 92.0),
-            child: Component11(),
-          ),
-          // 3 round rectangle:
-          //live videos
-          Pinned.fromPins(
-            Pin(size: 24.0, middle: 0.5014),
-            Pin(size: 13.0, start: 98.0),
-            child: const Text(
-              'Live',
-              style: TextStyle(
-                fontFamily: 'Bahnschrift',
-                fontSize: 13,
-                color: Color(0xffffffff),
-                fontWeight: FontWeight.w700,
-                height: 2.3076923076923075,
-              ),
-              textHeightBehavior:
-              TextHeightBehavior(applyHeightToFirstAscent: false),
-              textAlign: TextAlign.center,
-              softWrap: false,
-            ),
-          ),
-
-          // Following videos
-          Pinned.fromPins(
-            Pin(size: 56.0, start: 42.0),
-            Pin(size: 13.0, start: 98.0),
-            child: const Text(
-              'Following',
-              style: TextStyle(
-                fontFamily: 'Bahnschrift',
-                fontSize: 13,
-                color: Color(0xffc64a62),
-                fontWeight: FontWeight.w700,
-                height: 2.3076923076923075,
-              ),
-              textHeightBehavior:
-              TextHeightBehavior(applyHeightToFirstAscent: false),
-              textAlign: TextAlign.center,
-              softWrap: false,
-            ),
-          ),
-
-          //Trending videos
-          Pinned.fromPins(
-            Pin(size: 50.0, end: 44.0),
-            Pin(size: 13.0, start: 98.0),
-            child: const Text(
-              'Trending',
-              style: TextStyle(
-                fontFamily: 'Bahnschrift',
-                fontSize: 13,
-                color: Color(0xffc64a62),
-                fontWeight: FontWeight.w700,
-                height: 2.3076923076923075,
-              ),
-              textHeightBehavior:
-              TextHeightBehavior(applyHeightToFirstAscent: false),
-              textAlign: TextAlign.center,
-              softWrap: false,
-            ),
-          ),
-
           //ad box
-          Pinned.fromPins(
-            Pin(start: 20.0, end: 19.0),
-            Pin(size: 72.0, middle: 0.1959),
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xffffffff),
-                    borderRadius: BorderRadius.circular(21.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color(0x29000000),
-                        offset: Offset(1, 0),
-                        blurRadius: 6,
+          Container(
+              margin: const EdgeInsets.only(top: 30),
+              child: Pinned.fromPins(
+                Pin(start: 20.0, end: 19.0),
+                Pin(size: 92.0, middle: 0.1959),
+                child: Stack(
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xffffffff),
+                        borderRadius: BorderRadius.circular(21.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0x29000000),
+                            offset: Offset(1, 0),
+                            blurRadius: 6,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                    Pinned.fromPins(
+                      Pin(size: 10.0, middle: 0.4049),
+                      Pin(size: 10.0, end: 7.0),
+                      child: SvgPicture.string(
+                        _svg_ud95,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Pinned.fromPins(
+                      Pin(size: 10.0, middle: 0.4969),
+                      Pin(size: 10.0, end: 7.0),
+                      child: SvgPicture.string(
+                        _svg_k0y3op,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Pinned.fromPins(
+                      Pin(size: 10.0, middle: 0.589),
+                      Pin(size: 10.0, end: 7.0),
+                      child: SvgPicture.string(
+                        _svg_dlbkp,
+                        allowDrawingOutsideViewBox: true,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ],
                 ),
-                Pinned.fromPins(
-                  Pin(size: 10.0, middle: 0.4049),
-                  Pin(size: 10.0, end: 7.0),
-                  child: SvgPicture.string(
-                    _svg_ud95,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 10.0, middle: 0.4969),
-                  Pin(size: 10.0, end: 7.0),
-                  child: SvgPicture.string(
-                    _svg_k0y3op,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Pinned.fromPins(
-                  Pin(size: 10.0, middle: 0.589),
-                  Pin(size: 10.0, end: 7.0),
-                  child: SvgPicture.string(
-                    _svg_dlbkp,
-                    allowDrawingOutsideViewBox: true,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-// add circle:
+              )),
+// video grid:
+//         ListView.builder(
+//             itemBuilder: (context,index){
+//           return ListView()
+//         })
           Pinned.fromPins(
-            Pin(start: 21.0, end: 20.0),
-            Pin(size: 538.0, end: 33.0),
+            Pin(start: 33.0, end: 33.0),
+            Pin(size: 538.0, end: -60.0),
             child: Stack(
               children: <Widget>[
                 Align(
@@ -332,566 +323,9 @@ class HomeState extends State<Home> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: SizedBox(
-                    width: 155.0,
-                    height: 160.0,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
-                            borderRadius: BorderRadius.circular(30.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0x29000000),
-                                offset: Offset(3, 4),
-                                blurRadius: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(start: 3.0, end: 4.0),
-                          Pin(size: 99.0, start: 8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(17.0),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(start: 9.0, end: 20.0),
-                          Pin(size: 21.0, middle: 0.8129),
-                          child: Text(
-                            'Cian McGovern - Fingerprints (with\nHD video of nature)',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              fontWeight: FontWeight.w700,
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, start: 9.0),
-                          Pin(size: 11.0, end: 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 9.0, start: 23.0),
-                          Pin(size: 8.0, end: 13.0),
-                          child: Text(
-                            '5k',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, middle: 0.8264),
-                          Pin(size: 11.0, end: 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 9.0, end: 13.0),
-                          Pin(size: 8.0, end: 13.0),
-                          child: Text(
-                            '5k',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: SizedBox(
-                    width: 155.0,
-                    height: 160.0,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
-                            borderRadius: BorderRadius.circular(30.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0x29000000),
-                                offset: Offset(3, 4),
-                                blurRadius: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(start: 3.0, end: 4.0),
-                          Pin(size: 99.0, start: 8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(17.0),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(start: 9.0, end: 20.0),
-                          Pin(size: 21.0, middle: 0.8129),
-                          child: Text(
-                            'Cian McGovern - Fingerprints (with\nHD video of nature)',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              fontWeight: FontWeight.w700,
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, start: 9.0),
-                          Pin(size: 11.0, end: 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 9.0, start: 23.0),
-                          Pin(size: 8.0, end: 13.0),
-                          child: const Text(
-                            '5k',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: Color(0xff707070),
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, middle: 0.8264),
-                          Pin(size: 11.0, end: 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 9.0, end: 13.0),
-                          Pin(size: 8.0, end: 13.0),
-                          child: Text(
-                            '5k',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: SizedBox(
-                    width: 155.0,
-                    height: 160.0,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
-                            borderRadius: BorderRadius.circular(30.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0x29000000),
-                                offset: Offset(3, 4),
-                                blurRadius: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(start: 3.0, end: 4.0),
-                          Pin(size: 99.0, start: 8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(17.0),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(start: 9.0, end: 20.0),
-                          Pin(size: 21.0, middle: 0.8129),
-                          child: Text(
-                            'Cian McGovern - Fingerprints (with\nHD video of nature)',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              fontWeight: FontWeight.w700,
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, start: 9.0),
-                          Pin(size: 11.0, end: 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 9.0, start: 23.0),
-                          Pin(size: 8.0, end: 13.0),
-                          child: Text(
-                            '5k',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, middle: 0.8264),
-                          Pin(size: 11.0, end: 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 9.0, end: 13.0),
-                          Pin(size: 8.0, end: 13.0),
-                          child: Text(
-                            '5k',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: SizedBox(
-                    width: 155.0,
-                    height: 160.0,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
-                            borderRadius: BorderRadius.circular(30.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0x29000000),
-                                offset: Offset(3, 4),
-                                blurRadius: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(start: 3.0, end: 4.0),
-                          Pin(size: 99.0, start: 8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(17.0),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(start: 9.0, end: 20.0),
-                          Pin(size: 21.0, middle: 0.8129),
-                          child: Text(
-                            'Cian McGovern - Fingerprints (with\nHD video of nature)',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              fontWeight: FontWeight.w700,
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, start: 9.0),
-                          Pin(size: 11.0, end: 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 9.0, start: 23.0),
-                          Pin(size: 8.0, end: 13.0),
-                          child: Text(
-                            '5k',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, middle: 0.8264),
-                          Pin(size: 11.0, end: 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 9.0, end: 13.0),
-                          Pin(size: 8.0, end: 13.0),
-                          child: Text(
-                            '5k',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: SizedBox(
-                    width: 155.0,
-                    height: 160.0,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                            color: const Color(0xffffffff),
-                            borderRadius: BorderRadius.circular(30.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0x29000000),
-                                offset: Offset(3, 4),
-                                blurRadius: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(start: 3.0, end: 4.0),
-                          Pin(size: 99.0, start: 8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.fill,
-                              ),
-                              borderRadius: BorderRadius.circular(17.0),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(start: 9.0, end: 20.0),
-                          Pin(size: 21.0, middle: 0.8129),
-                          child: Text(
-                            'Cian McGovern - Fingerprints (with\nHD video of nature)',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              fontWeight: FontWeight.w700,
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, start: 9.0),
-                          Pin(size: 11.0, end: 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 9.0, start: 23.0),
-                          Pin(size: 8.0, end: 13.0),
-                          child: Text(
-                            '5k',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 11.0, middle: 0.8264),
-                          Pin(size: 11.0, end: 12.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: const AssetImage(''),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromPins(
-                          Pin(size: 9.0, end: 13.0),
-                          Pin(size: 8.0, end: 13.0),
-                          child: Text(
-                            '5k',
-                            style: TextStyle(
-                              fontFamily: 'Bahnschrift',
-                              fontSize: 8,
-                              color: const Color(0xff707070),
-                              height: 1.625,
-                            ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
               ],
             ),
           ),
-
-          // app bottom nav bar
-          // Pinned.fromPins(
-          //   Pin(start: 9.0, end: 8.0),
-          //   Pin(size: 49.0, end: 12.0),
-          //   child: BottomNavBar()
-          // ),
         ],
       ),
     );

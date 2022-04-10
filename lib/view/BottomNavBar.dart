@@ -30,8 +30,8 @@ Container buildBottomNavBar(BuildContext context, int icon_index) {
                   )
                 : Image.asset(
                     'Assets/Images/home_white_ic.png',
-                    height: 10,
-                    width: 10,
+                    height: 23,
+                    width: 23,
                   ),
             onPressed: () => Navigator.push(
               context,

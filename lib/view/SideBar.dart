@@ -9,6 +9,7 @@ class SideBar extends StatefulWidget {
 }
 
 class SideBarState extends State<SideBar> {
+  var main_blue = Color(0xff125FB2);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +23,7 @@ class SideBarState extends State<SideBar> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.horizontal(right: Radius.circular(55)),
               // <= No more error here :)
-              color: Color(0xff125FB2),
+              color: main_blue,
             ),
             //color: Color(0xff125FB2),
 
@@ -47,7 +48,7 @@ class SideBarState extends State<SideBar> {
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.visible,
                               style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
+                                  const TextStyle(fontWeight: FontWeight.bold,color: Colors.white ),
                             ),
                           ],
                         ))),
