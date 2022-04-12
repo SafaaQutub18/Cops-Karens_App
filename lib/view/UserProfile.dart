@@ -60,7 +60,7 @@ class UserProfileState extends State<UserProfile> {
             Container(
               margin: const EdgeInsets.only(
                   left: 20.0, right: 20.0, bottom: 20.0, top: 40),
-              height: 140,
+              height: 130,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
                 // <= No more error here :)
@@ -75,7 +75,7 @@ class UserProfileState extends State<UserProfile> {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 20,
+                    width: 25,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -87,7 +87,7 @@ class UserProfileState extends State<UserProfile> {
                       Text(
                         "66",
                         style:
-                            TextStyle(color: Color(0xffF18585), fontSize: 40),
+                            TextStyle(color: Color(0xffF18585), fontSize: 30),
                       )
                     ],
                   ),
@@ -104,7 +104,7 @@ class UserProfileState extends State<UserProfile> {
                       Text(
                         "6",
                         style:
-                            TextStyle(color: Color(0xffF18585), fontSize: 40),
+                            TextStyle(color: Color(0xffF18585), fontSize: 30),
                       )
                     ],
                   )
@@ -142,7 +142,7 @@ class UserProfileState extends State<UserProfile> {
                   "user name",
                   style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      fontSize: 23,
                       color: Colors.white),
                 )
               ]),
@@ -154,7 +154,7 @@ class UserProfileState extends State<UserProfile> {
               // personal info container:
               Container(
                 margin: const EdgeInsets.only(
-                    left: 25.0, right: 20.0, bottom: 20.0, top: 40),
+                    left: 25.0, right: 20.0, bottom: 20.0, top: 20),
                 child: Column(
                   children: [
                     // pink title:
@@ -334,7 +334,7 @@ class UserProfileState extends State<UserProfile> {
               ),
               Container(
                 margin: const EdgeInsets.only(
-                    left: 25.0, right: 20.0, bottom: 20.0, top: 40),
+                    left: 25.0, right: 20.0, bottom: 20.0, top: 20),
                 child: Column(
                   children: [
                     // pink title:
@@ -442,7 +442,7 @@ class UserProfileState extends State<UserProfile> {
               ),
               Container(
                 margin: const EdgeInsets.only(
-                    left: 25.0, right: 20.0, bottom: 20.0, top: 40),
+                    left: 25.0, right: 20.0, bottom: 20.0, top: 20),
                 child: Column(
                   children: [
                     // pink title:
@@ -487,7 +487,9 @@ class UserProfileState extends State<UserProfile> {
                     ),
 
                     Divider(color: Colors.black54),
-
+                    SizedBox(
+                      height: 15,
+                    ),
                     // emergency contacts text:
                     Container(
                       margin: const EdgeInsets.only(right: 180),
@@ -606,7 +608,7 @@ class UserProfileState extends State<UserProfile> {
                               ),
                             ])),
                     SizedBox(
-                      height: 15,
+                      height: 25,
                     ),
                     // Social Media accounts:
                     Container(
@@ -622,7 +624,7 @@ class UserProfileState extends State<UserProfile> {
                       ),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 15,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -634,7 +636,9 @@ class UserProfileState extends State<UserProfile> {
                               width: 40,
                               height: 40,
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Text("@nadia",
                                 style: TextStyle(
                                   fontSize: 15,
@@ -642,7 +646,9 @@ class UserProfileState extends State<UserProfile> {
                                 )),
                           ],
                         ),
-                        SizedBox(width: 60,),
+                        SizedBox(
+                          width: 60,
+                        ),
                         Column(
                           children: [
                             Image.asset(
@@ -650,7 +656,9 @@ class UserProfileState extends State<UserProfile> {
                               width: 40,
                               height: 40,
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Text("@nadia",
                                 style: TextStyle(
                                   fontSize: 15,
@@ -658,7 +666,9 @@ class UserProfileState extends State<UserProfile> {
                                 )),
                           ],
                         ),
-                        SizedBox(width: 60,),
+                        SizedBox(
+                          width: 60,
+                        ),
                         Column(
                           children: [
                             Image.asset(
@@ -666,7 +676,9 @@ class UserProfileState extends State<UserProfile> {
                               width: 40,
                               height: 40,
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Text("@nadia",
                                 style: TextStyle(
                                   fontSize: 15,
